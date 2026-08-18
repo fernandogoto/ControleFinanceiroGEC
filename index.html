@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0c1220" />
+    <title>GEC | Painel Financeiro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./associate.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">G</span><span>GEC</span></div>
+      <nav>
+        <a class="active" href="#visao-geral"><span>▦</span> Visão geral</a>
+        <a href="#movimentacoes"><span>↕</span> Movimentações</a>
+        <a href="#receitas"><span>↗</span> Receitas</a>
+        <a href="#despesas"><span>↘</span> Despesas</a>
+        <a href="#associados"><span>♙</span> Associados</a>
+      </nav>
+      <div class="sidebar-bottom"><span class="status-dot"></span> Dados conectados</div>
+    </aside>
+
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">GESTÃO FINANCEIRA</p>
+          <h1>Visão geral</h1>
+          <p class="subtitle" id="period-title">Carregando dados financeiros...</p>
+        </div>
+        <div class="header-actions">
+          <button class="icon-button" id="refresh" title="Atualizar dados">↻</button>
+          <div class="avatar">FG</div>
+        </div>
+      </header>
+
+      <section class="filter-bar" aria-label="Filtros do painel">
+        <label>De <input type="date" id="date-from" /></label>
+        <label>Até <input type="date" id="date-to" /></label>
+        <label>Período <select id="period-filter"><option value="all">Todo o período</option></select></label>
+        <label>Classificação <select id="category-filter"><option value="all">Todas</option></select></label>
+        <button id="clear-filters">Limpar filtros</button>
+        <span class="updated" id="updated-at"></span>
+      </section>
+
+      <section class="metrics" id="visao-geral">
+        <article class="metric-card balance"><div class="metric-icon">▣</div><p>Saldo do período</p><h2 id="balance">—</h2><span id="balance-note">—</span></article>
+        <article class="metric-card income"><div class="metric-icon">↗</div><p>Entradas</p><h2 id="income">—</h2><span id="income-note">—</span></article>
+        <article class="metric-card expense"><div class="metric-icon">↘</div><p>Saídas</p><h2 id="expense">—</h2><span id="expense-note">—</span></article>
+        <article class="metric-card people"><div class="metric-icon">♙</div><p>Associados cadastrados</p><h2 id="associates-count">—</h2><span id="associates-note">—</span></article>
+      </section>
+
+      <section class="grid top-grid">
+        <article class="panel chart-panel" id="receitas">
+          <div class="panel-heading"><div><h3>Fluxo financeiro</h3><p>Entradas e saídas por mês</p></div><div class="legend"><span><i class="income-dot"></i>Entradas</span><span><i class="expense-dot"></i>Saídas</span></div></div>
+          <div class="bar-chart" id="bar-chart"></div>
+        </article>
+        <article class="panel distribution-panel">
+          <div class="panel-heading"><div><h3>Composição das entradas</h3><p>Por classificação</p></div></div>
+          <div class="donut-row"><div class="donut" id="donut"><div><strong id="donut-value">—</strong><span>entradas</span></div></div><ul id="distribution-list" class="distribution-list"></ul></div>
+        </article>
+      </section>
+
+      <section class="grid bottom-grid">
+        <article class="panel" id="movimentacoes">
+          <div class="panel-heading"><div><h3>Movimentações recentes</h3><p>Últimos lançamentos do período</p></div><button class="link-button" id="show-all">Ver todos →</button></div>
+          <div class="table-wrap"><table><thead><tr><th>Data</th><th>Descrição</th><th>Categoria</th><th>Forma</th><th class="amount">Valor</th></tr></thead><tbody id="transactions"></tbody></table></div>
+        </article>
+        <article class="panel insight-panel">
+          <div class="panel-heading"><div><h3>Resumo do período</h3><p>Leitura rápida da operação</p></div></div>
+          <div class="insights" id="insights"></div>
+          <div class="top-members"><h4>Maiores contribuições</h4><div id="top-members"></div></div>
+        </article>
+      </section>
+
+      <section class="panel expenses-ranking" id="despesas">
+        <div class="panel-heading"><div><h3>10 maiores gastos</h3><p>Despesas de maior valor no período selecionado</p></div><strong id="expenses-total" class="expenses-total">—</strong></div>
+        <div class="table-wrap"><table><thead><tr><th>#</th><th>Data</th><th>Descrição</th><th>Categoria</th><th>Forma</th><th class="amount">Valor</th></tr></thead><tbody id="top-expenses"></tbody></table></div>
+      </section>
+
+      <section class="panel associate-search" id="associados">
+        <div class="panel-heading"><div><h3>Consulta de mensalidades por associado</h3><p>Pesquise pelo nome ou registro para conferir os pagamentos de mensalidade.</p></div></div>
+        <div class="associate-controls">
+          <input id="associate-query" list="associate-options" type="search" placeholder="Digite o nome ou o registro do associado" autocomplete="off" />
+          <button id="associate-clear">Limpar busca</button>
+        </div>
+        <datalist id="associate-options"></datalist>
+        <div id="associate-result" class="associate-result"><p>Informe um nome ou registro para consultar as mensalidades pagas.</p></div>
+      </section>
+    </main>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
