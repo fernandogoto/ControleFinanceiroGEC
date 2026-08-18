@@ -12,6 +12,18 @@
     <link rel="stylesheet" href="./associate.css" />
   </head>
   <body>
+    <section class="access-gate" id="access-gate" aria-labelledby="access-title">
+      <form class="access-card" id="access-form">
+        <div class="access-logo"><span>G</span></div>
+        <p class="eyebrow">ÁREA RESTRITA</p>
+        <h1 id="access-title">Painel Financeiro GEC</h1>
+        <p>Informe a senha de acesso para visualizar as informações financeiras.</p>
+        <label for="access-password">Senha de acesso</label>
+        <input id="access-password" type="password" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="current-password" required autofocus />
+        <p id="access-error" class="access-error" role="alert"></p>
+        <button type="submit">Acessar painel →</button>
+      </form>
+    </section>
     <aside class="sidebar">
       <div class="brand"><span class="brand-mark">G</span><span>GEC</span></div>
       <nav>
