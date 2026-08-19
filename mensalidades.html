@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0c1220" />
+    <title>GEC | Mensalidades</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./associate.css" />
+    <link rel="stylesheet" href="./mensalidades.css" />
+  </head>
+  <body>
+    <section class="access-gate" id="access-gate" aria-labelledby="access-title">
+      <form class="access-card" id="access-form">
+        <div class="access-logo"><span>G</span></div><p class="eyebrow">ÁREA RESTRITA</p><h1 id="access-title">Painel Financeiro GEC</h1><p>Informe a senha de acesso para visualizar as mensalidades.</p>
+        <label for="access-password">Senha de acesso</label><input id="access-password" type="password" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="current-password" required autofocus />
+        <p id="access-error" class="access-error" role="alert"></p><button type="submit">Acessar painel →</button>
+      </form>
+    </section>
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">G</span><span>GEC</span></div>
+      <nav>
+        <a href="./index.html#visao-geral"><span>▦</span> Visão geral</a>
+        <a href="./index.html#movimentacoes"><span>↕</span> Movimentações</a>
+        <a href="./index.html#receitas"><span>↗</span> Receitas</a>
+        <a href="./index.html#despesas"><span>↘</span> Despesas</a>
+        <a class="active" href="./mensalidades.html"><span>▤</span> Mensalidades</a>
+        <a href="./index.html#associados"><span>♙</span> Associados</a>
+      </nav>
+      <div class="sidebar-bottom"><span class="status-dot"></span> Dados conectados</div>
+    </aside>
+    <main>
+      <header><div><p class="eyebrow">ACOMPANHAMENTO DE RECEBIMENTOS</p><h1>Mensalidades</h1><p class="subtitle">Valores pagos por associado e mês de referência.</p></div><div class="header-actions"><button class="icon-button" id="refresh" title="Atualizar dados">↻</button><div class="avatar">FG</div></div></header>
+      <section class="filter-bar"><label>Ano de referência <select id="year-filter"></select></label><span class="updated" id="updated-at"></span></section>
+      <section class="monthly-summary"><article><span>Associados com pagamentos</span><strong id="paid-members">—</strong></article><article><span>Mensalidades registradas</span><strong id="payment-count">—</strong></article><article><span>Total recebido</span><strong id="received-total">—</strong></article></section>
+      <section class="panel monthly-panel"><div class="panel-heading"><div><h3>Mapa de mensalidades pagas</h3><p>Os valores acumulam registros duplicados para o mesmo mês e ano de referência.</p></div><div class="monthly-legend"><i></i> Mensalidade paga</div></div><div class="table-wrap monthly-table-wrap"><table class="monthly-table"><thead id="monthly-head"></thead><tbody id="monthly-body"></tbody></table></div></section>
+    </main>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./mensalidades.js"></script>
+  </body>
+</html>
