@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#0c1220" />
+    <title>GEC | Situação de mensalidades</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" /><link rel="stylesheet" href="./associate.css" /><link rel="stylesheet" href="./situacao.css" />
+  </head>
+  <body>
+    <section class="access-gate" id="access-gate" aria-labelledby="access-title"><form class="access-card" id="access-form"><div class="access-logo"><span>G</span></div><p class="eyebrow">ÁREA RESTRITA</p><h1 id="access-title">Painel Financeiro GEC</h1><p>Informe a senha de acesso para consultar a situação de mensalidades.</p><label for="access-password">Senha de acesso</label><input id="access-password" type="password" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="current-password" required autofocus /><p id="access-error" class="access-error" role="alert"></p><button type="submit">Acessar painel →</button></form></section>
+    <div class="nav-backdrop" id="nav-backdrop"></div><aside class="sidebar" id="mobile-nav"><div class="brand"><span class="brand-mark">G</span><span>GEC</span></div><nav><a href="./index.html#visao-geral"><span>▦</span> Visão geral</a><a href="./index.html#movimentacoes"><span>↕</span> Movimentações</a><a href="./index.html#receitas"><span>↗</span> Receitas</a><a href="./index.html#despesas"><span>↘</span> Despesas</a><a href="./mensalidades.html"><span>▤</span> Mensalidades</a><a href="./associados.html"><span>♙</span> Associados</a><a class="active" href="./situacao.html"><span>◷</span> Situação</a></nav><div class="sidebar-bottom"><span class="status-dot"></span> Dados conectados</div></aside>
+    <main><header><div><p class="eyebrow">CONTROLE INDIVIDUAL</p><h1>Situação das mensalidades</h1><p class="subtitle">Histórico de 12 meses e previsão dos próximos 6 meses.</p></div><div class="header-actions"><button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-controls="mobile-nav" aria-expanded="false">☰</button><button class="icon-button" id="refresh" title="Atualizar dados">↻</button><div class="avatar">FG</div></div></header>
+      <section class="panel member-picker"><div class="picker-label"><label for="member-search">Associado</label><small>Pesquise por nome ou registro</small></div><div class="member-search-control"><input id="member-search" list="member-options" type="search" placeholder="Digite o nome ou registro do associado" autocomplete="off" /><button id="member-clear" type="button">Limpar</button></div><datalist id="member-options"></datalist><span class="updated" id="updated-at"></span></section>
+      <section class="situation-summary" id="situation-summary"></section>
+      <section class="panel timeline-panel"><div class="panel-heading"><div><h3>Linha do tempo de mensalidades</h3><p>O status é calculado com base no mês e ano de referência.</p></div><div class="status-legend"><span><i class="paid-dot"></i>Pago</span><span><i class="open-dot"></i>Em aberto</span><span><i class="late-dot"></i>Atrasado</span><span><i class="courtesy-dot"></i>Cortesia</span><span><i class="future-dot"></i>Futuro</span></div></div><div id="timeline" class="timeline"><p class="empty-state">Pesquise e selecione um associado para visualizar a situação.</p></div></section>
+    </main><div class="toast" id="toast" role="status"></div><script src="./nav.js"></script><script src="./situacao.js"></script>
+  </body>
+</html>
