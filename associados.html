@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#0c1220" />
+    <title>GEC | Consulta de associados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" /><link rel="stylesheet" href="./associate.css" />
+  </head>
+  <body>
+    <section class="access-gate" id="access-gate" aria-labelledby="access-title"><form class="access-card" id="access-form"><div class="access-logo"><span>G</span></div><p class="eyebrow">ÁREA RESTRITA</p><h1 id="access-title">Painel Financeiro GEC</h1><p>Informe a senha de acesso para consultar as mensalidades.</p><label for="access-password">Senha de acesso</label><input id="access-password" type="password" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="current-password" required autofocus /><p id="access-error" class="access-error" role="alert"></p><button type="submit">Acessar painel →</button></form></section>
+    <aside class="sidebar"><div class="brand"><span class="brand-mark">G</span><span>GEC</span></div><nav><a href="./index.html#visao-geral"><span>▦</span> Visão geral</a><a href="./index.html#movimentacoes"><span>↕</span> Movimentações</a><a href="./index.html#receitas"><span>↗</span> Receitas</a><a href="./index.html#despesas"><span>↘</span> Despesas</a><a href="./mensalidades.html"><span>▤</span> Mensalidades</a><a class="active" href="./associados.html"><span>♙</span> Associados</a></nav><div class="sidebar-bottom"><span class="status-dot"></span> Dados conectados</div></aside>
+    <main><header><div><p class="eyebrow">ACOMPANHAMENTO INDIVIDUAL</p><h1>Consulta de associados</h1><p class="subtitle">Consulte mensalidades pagas por nome ou número de registro.</p></div><div class="header-actions"><button class="icon-button" id="refresh" title="Atualizar dados">↻</button><div class="avatar">FG</div></div></header>
+      <section class="filter-bar"><label>De <input type="date" id="date-from" /></label><label>Até <input type="date" id="date-to" /></label><button id="clear-dates">Mês atual</button><span class="updated" id="updated-at"></span></section>
+      <section class="panel associate-search standalone-search"><div class="panel-heading"><div><h3>Mensalidades por associado</h3><p>Pesquise pelo nome completo ou registro cadastrado.</p></div></div><div class="associate-controls"><input id="associate-query" list="associate-options" type="search" placeholder="Digite o nome ou o registro do associado" autocomplete="off" /><button id="associate-clear">Limpar busca</button></div><datalist id="associate-options"></datalist><div id="associate-result" class="associate-result"><p>Informe um nome ou registro para consultar as mensalidades pagas.</p></div></section>
+    </main><div class="toast" id="toast" role="status"></div><script src="./associados.js"></script>
+  </body>
+</html>

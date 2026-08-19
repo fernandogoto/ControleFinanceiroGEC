@@ -32,7 +32,7 @@
         <a href="#receitas"><span>↗</span> Receitas</a>
         <a href="#despesas"><span>↘</span> Despesas</a>
         <a href="./mensalidades.html"><span>▤</span> Mensalidades</a>
-        <a href="#associados"><span>♙</span> Associados</a>
+        <a href="./associados.html"><span>♙</span> Associados</a>
       </nav>
       <div class="sidebar-bottom"><span class="status-dot"></span> Dados conectados</div>
     </aside>
@@ -94,15 +94,6 @@
         <div class="table-wrap"><table><thead><tr><th>#</th><th>Data</th><th>Descrição</th><th>Categoria</th><th>Forma</th><th class="amount">Valor</th></tr></thead><tbody id="top-expenses"></tbody></table></div>
       </section>
 
-      <section class="panel associate-search" id="associados">
-        <div class="panel-heading"><div><h3>Consulta de mensalidades por associado</h3><p>Pesquise pelo nome ou registro para conferir os pagamentos de mensalidade.</p></div></div>
-        <div class="associate-controls">
-          <input id="associate-query" list="associate-options" type="search" placeholder="Digite o nome ou o registro do associado" autocomplete="off" />
-          <button id="associate-clear">Limpar busca</button>
-        </div>
-        <datalist id="associate-options"></datalist>
-        <div id="associate-result" class="associate-result"><p>Informe um nome ou registro para consultar as mensalidades pagas.</p></div>
-      </section>
     </main>
     <div class="toast" id="toast" role="status"></div>
     <script src="./app.js"></script>
