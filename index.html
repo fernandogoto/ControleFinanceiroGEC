@@ -24,7 +24,8 @@
         <button type="submit">Acessar painel →</button>
       </form>
     </section>
-    <aside class="sidebar">
+    <div class="nav-backdrop" id="nav-backdrop"></div>
+    <aside class="sidebar" id="mobile-nav">
       <div class="brand"><span class="brand-mark">G</span><span>GEC</span></div>
       <nav>
         <a class="active" href="#visao-geral"><span>▦</span> Visão geral</a>
@@ -45,6 +46,7 @@
           <p class="subtitle" id="period-title">Carregando dados financeiros...</p>
         </div>
         <div class="header-actions">
+          <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-controls="mobile-nav" aria-expanded="false">☰</button>
           <button class="icon-button" id="refresh" title="Atualizar dados">↻</button>
           <div class="avatar">FG</div>
         </div>
@@ -96,6 +98,7 @@
 
     </main>
     <div class="toast" id="toast" role="status"></div>
+    <script src="./nav.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

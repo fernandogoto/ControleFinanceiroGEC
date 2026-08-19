@@ -20,7 +20,8 @@
         <p id="access-error" class="access-error" role="alert"></p><button type="submit">Acessar painel →</button>
       </form>
     </section>
-    <aside class="sidebar">
+    <div class="nav-backdrop" id="nav-backdrop"></div>
+    <aside class="sidebar" id="mobile-nav">
       <div class="brand"><span class="brand-mark">G</span><span>GEC</span></div>
       <nav>
         <a href="./index.html#visao-geral"><span>▦</span> Visão geral</a>
@@ -33,12 +34,12 @@
       <div class="sidebar-bottom"><span class="status-dot"></span> Dados conectados</div>
     </aside>
     <main>
-      <header><div><p class="eyebrow">ACOMPANHAMENTO DE RECEBIMENTOS</p><h1>Mensalidades</h1><p class="subtitle">Valores pagos por associado e mês de referência.</p></div><div class="header-actions"><button class="icon-button" id="refresh" title="Atualizar dados">↻</button><div class="avatar">FG</div></div></header>
+      <header><div><p class="eyebrow">ACOMPANHAMENTO DE RECEBIMENTOS</p><h1>Mensalidades</h1><p class="subtitle">Valores pagos por associado e mês de referência.</p></div><div class="header-actions"><button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-controls="mobile-nav" aria-expanded="false">☰</button><button class="icon-button" id="refresh" title="Atualizar dados">↻</button><div class="avatar">FG</div></div></header>
       <section class="filter-bar"><label>Ano de referência <select id="year-filter"></select></label><span class="updated" id="updated-at"></span></section>
       <section class="monthly-summary"><article><span>Associados com pagamentos</span><strong id="paid-members">—</strong></article><article><span>Mensalidades registradas</span><strong id="payment-count">—</strong></article><article><span>Total recebido</span><strong id="received-total">—</strong></article></section>
       <section class="panel monthly-panel"><div class="panel-heading"><div><h3>Mapa de mensalidades pagas</h3><p>Os valores acumulam registros duplicados para o mesmo mês e ano de referência.</p></div><div class="monthly-legend"><i></i> Mensalidade paga</div></div><div class="table-wrap monthly-table-wrap"><table class="monthly-table"><thead id="monthly-head"></thead><tbody id="monthly-body"></tbody></table></div></section>
     </main>
-    <div class="toast" id="toast" role="status"></div>
+    <div class="toast" id="toast" role="status"></div><script src="./nav.js"></script>
     <script src="./mensalidades.js"></script>
   </body>
 </html>
